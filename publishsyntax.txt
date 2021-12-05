@@ -1,0 +1,5 @@
+mosquitto_sub -t "esp8266/12"
+
+
+
+mosquitto_pub -t "/esp8266/dhtsensor" -m "{\"temperature\":22,\"humidity\":66}"

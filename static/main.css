@@ -1,0 +1,156 @@
+body{
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  color: #1b2a49;
+}  
+img{
+  display: inline-block
+}
+button {
+  color: white;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 0 30px;
+  line-height: 30px;
+  display: inline-block;
+  position: relative;
+  border-radius: 20px;
+  background-image: linear-gradient(#335b71 45%, #03324c 55%);
+  box-shadow: 0 2px 2px #888888;
+  transition: color 0.3s, background-image 0.5s, ease-in-out;
+}
+button:hover {
+  background-image: linear-gradient(#b1ccda 49%, #96b4c5 51%);
+  color: #03324c;
+}
+
+table, tr, td {
+  background-color:   whitesmoke  ;
+  border: 2px solid whitesmoke;
+  border-radius: 10%;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+#bed {
+  display: grid;
+  grid-row-gap: 40px;
+    grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+    justify-items: center;
+}
+#bed1 {
+  margin: 7px;
+  border: 0px;
+  width: 265px;
+}
+
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
+.wrapper {
+  margin: 30px;
+  border: 2px solid whitesmoke;
+}
+.gauge {
+  display: block;
+  float: left;
+}
+#g1 {
+  width: 50%;
+}
+#g2 {
+  width: 50%;
+}
+.sub {
+  background-color: #1b2a49;
+  font-weight: bold;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  position: relative;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+body{height: 900px;}
+
+header {
+  background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+
+header .overlay{
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #FFF;
+  text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 10px;
+}
+
+h3, p {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+button {
+  font-size: 15px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #333;
+  background: #fff;
+  margin: 5px;
+  box-shadow: 0 3px 10px 0 #0000003b;
+}
+button:hover{
+  cursor: pointer;
+}
+
+input {
+  margin-left: 10px;
+  margin-top: 5px;
+}

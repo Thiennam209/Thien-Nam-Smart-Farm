@@ -1,0 +1,21 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Welcome</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">					
+	</head>
+	<body></br></br></br>
+		<div align="center">
+		<div align="center" class="border">
+			<div class="header">
+				<h1 class="word" color=blue >Wecome to Internet of Things Based Smart Farm Control System </h1>
+			</div></br></br>
+				<h1 class="bottom"> Please go to login page </h1>
+				</br>
+				<h1 class="bottom"> <a href="{{ url_for('login') }}" class="btn">Login</a> </h1>
+		</div>
+		</div>
+	</body>
+</html>

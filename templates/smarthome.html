@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<title>Smart Farm</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+	<header>
+		<div class="overlay">
+			<a href="{{url_for('backsh')}}" style="color: white; text-decoration: none;">
+				<h1 style="font-size: 45px">Smart Farm</h1></a>
+		</div>
+	</header>
+	<br>
+	<br>
+	<div id="bed">
+		{% for i in range(1,  leng) %}
+		<table id="bed1" class="card-1">
+			<tr>
+				<td style="padding: 18px;">
+					<h1 style="font-size: 25px;">
+						<img src="{{ url_for('static', filename = 'img/farm.png') }}" width="36" height="36">
+					 Room {{ i }}</h1>   
+								<hr>
+					<h3><img src="{{ url_for('static', filename = 'img/watering.png') }}" width="25" height="25">
+						{{ pins[2*i - 1].name }} in {{ pins[2*i - 1].room }}
+					{% if pins[2*i - 1].state == 'True' %}
+							is:<br><strong>On</strong></h2>
+									<form action="/esp8266_1/{{2*i - 1}}/0" method="post">
+								<button name="forwardBtn1" type="submit">Turn off</button>
+						</form>
+						{% else %}
+							is:<br><strong>Off</strong></h2>
+						<form action="/esp8266_1/{{2*i - 1}}/1" method="post">
+									<button name="forwardBtn1" type="submit">Turn on</button>
+						</form>
+					{% endif %}
+
+					<h3><img src="{{ url_for('static', filename = 'img/light.png') }}" width="29" height="29">
+						{{ pins[2*i].name }} in {{ pins[2*i].room }}
+					{% if pins[2*i].state == 'True' %}
+							is:<br><strong>On</strong></h2>
+									<form action="/esp8266_1/{{2*i}}/0" method="post">
+								<button name="forwardBtn2" type="submit">Turn off</button>
+						</form>
+						{% else %}
+							is:<br><strong>Off</strong></h2>
+						<form action="/esp8266_1/{{2*i}}/1" method="post">
+									<button name="forwardBtn2" type="submit">Turn on</button>
+						</form>
+					{% endif %}
+					</td>
+			</table>
+		{% endfor %}
+		
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<a target="_blank" href="{{url_for('histh')}}" style="color: #1b2a49; text-decoration: none;">
+		<h1><img src="{{ url_for('static', filename = 'img/temp.png') }}" width="40" height="40">
+			TEMPERATURE and 
+			<img src="{{ url_for('static', filename = 'img/humid.png') }}" width="40" height="40">
+			HUMIDITY
+			
+		</h1></a>
+
+    <div class="wrapper clear">
+        <div id="g1" class="gauge"></div>
+        <div id="g2" class="gauge"></div>
+    </div>
+    <script src="{{ url_for('static', filename='raphael-2.1.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='justgage.js') }}"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var g1, g2, g3;
+ 
+        var g1 = new JustGage({
+            id: "g1",
+            value: {{temp}},
+            min: 0,
+            max: 50,
+            title: "Temperature",
+        });
+ 
+        var g2 = new JustGage({
+            id: "g2",
+            value: {{hum}},
+            min: 0,
+            max: 100,
+            title: "Humidity",
+        });
+    });
+    </script>
+
+	<br>
+	<br>
+	<br>
+	
+	<h1><img src="{{ url_for('static', filename = 'img/servo.jpg') }}" width="40" height="40" style="border-radius: 50%;">
+		Servo Control</h1>
+	<form method="POST" action="test">
+		<input type="range" name="slider1" min="1" max="180" value="{{slider_val_1}}" oninput="this.form.amountInput1.value=this.value" />
+		<input type="number" name="amountInput1" min="1" max="180" value="{{slider_val_1}}" oninput="this.form.slider1.value=this.value" />
+		<br>
+		<input type="submit" value="submit"  class="sub"/>
+		<br>
+		<br>
+		<input type="range" name="slider2" min="1" max="180" value="{{slider_val_2}}" oninput="this.form.amountInput2.value=this.value" />
+		<input type="number" name="amountInput2" min="1" max="180" value="{{slider_val_2}}" oninput="this.form.slider2.value=this.value" />
+		<br>
+		<input type="submit" value="submit" class="sub"/>
+		<br>
+		<br>
+		<input type="range" name="slider3" min="1" max="180" value="{{slider_val_3}}" oninput="this.form.amountInput3.value=this.value" />
+		<input type="number" name="amountInput3" min="1" max="180" value="{{slider_val_3}}" oninput="this.form.slider3.value=this.value" />
+		<br>
+		<input type="submit" value="submit"  class="sub"/>
+		<br>
+		<br>
+		<input type="range" name="slider4" min="1" max="180" value="{{slider_val_4}}" oninput="this.form.amountInput4.value=this.value" />
+		<input type="number" name="amountInput4" min="1" max="180" value="{{slider_val_4}}" oninput="this.form.slider4.value=this.value" />
+		<br>
+		<input type="submit" value="submit"  class="sub"/>
+  	</form>
+	<br>
+	<br>
+	<h3 class="bottom">Quit Smart Home System? <a class="bottom" href="{{url_for('logout')}}"> Logout</a></h3>
+</body>
+</html>

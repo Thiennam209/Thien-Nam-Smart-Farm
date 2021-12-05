@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Data</title>
+
+    <style>
+        body{
+			background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+			color: #1b2a49;
+		}  
+        
+		button:hover{
+			cursor: pointer;
+		}
+
+		input {
+			margin-left: 10px;
+			margin-top: 5px;
+		}
+        h1 {
+			font-family: 'Dancing Script', cursive;
+			margin-bottom: 10px;
+		}
+
+		h3, p {
+			font-family: 'Open Sans', sans-serif;
+			margin-top: 20px;
+			margin-bottom: 5px;
+		}
+
+        .sub {
+			background-color: #1b2a49;
+			font-weight: bold;
+			font-size: 0.8em;
+			letter-spacing: 0.1em;
+			text-decoration: none;
+			color: #ffffff;
+			display: inline-block;
+			padding: 5px 10px 5px 10px;
+			position: relative;
+			border: 3px solid #ffffff;
+			border-radius: 10px;
+		}
+        
+    </style>
+</head>
+<body>
+    <br>
+    <h1> HISTORICAL DATA </h1>
+    <br>
+    <h3> Enter number of samples to retrieve:
+        <br>
+        <br>
+        <form action="/histemphum" method="POST">
+            <input name="numSamples" value= {{numSamples}} style="height: 24px; text-align: center; width: 150px;">
+            <input type="submit" class="sub">	
+        </form>
+    </h3>
+    <br>
+    <img src="/plot/temp" alt="Image Placeholder"  width="49%">
+    <img src="/plot/hum"  alt="Image Placeholder"  width="49%">
+	<br>
+</body>
+</html>
